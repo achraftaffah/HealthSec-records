@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: lb://HEALTHCARE-SERVICE
+          predicates:
+            Path= /api/v1/**
+        - id: r2
+          uri: lb://BASICDISEASEPREDICTION-SERVICE
+          predicates:
+            Path= /
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE

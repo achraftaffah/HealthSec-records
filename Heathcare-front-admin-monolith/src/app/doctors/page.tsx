@@ -20,7 +20,7 @@ const DoctorTablePage = () => {
     const fetchDoctors = async () => {
       const token = cookies.get('accessToken');
       try {
-        const response = await fetch(`http://localhost:8082/api/v1/doctors/all?page=${currentPage-1}&size=${doctorsPerPage}`, {
+        const response = await fetch(`http://localhost:8388/api/v1/doctors/all?page=${currentPage-1}&size=${doctorsPerPage}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -50,7 +50,7 @@ const DoctorTablePage = () => {
   const handleDelete = async (doctorId: number) => {
     const token = cookies.get('accessToken');
     try {
-      const response = await fetch(`http://localhost:8082/api/v1/doctors/delete/${doctorId}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/doctors/delete/${doctorId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

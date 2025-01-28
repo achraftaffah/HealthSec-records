@@ -27,7 +27,7 @@ const AddRecordForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8082/api/v1/records/add", {
+      const response = await fetch("http://localhost:8388/api/v1/records/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

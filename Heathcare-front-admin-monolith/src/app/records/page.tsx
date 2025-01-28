@@ -19,7 +19,7 @@ const RecordTablePage = () => {
     const fetchRecords = async () => {
       const token = cookies.get('accessToken'); // Make sure you have a cookie named 'accessToken'
       try {
-        const response = await fetch(`http://localhost:8082/api/v1/records/all?page=${currentPage-1}&size=${recordsPerPage}`, {
+        const response = await fetch(`http://localhost:8388/api/v1/records/all?page=${currentPage-1}&size=${recordsPerPage}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -56,7 +56,7 @@ const RecordTablePage = () => {
   const handleDelete = async (recordId: string) => {
     const token = cookies.get('accessToken');
     try {
-      const response = await fetch(`http://localhost:8082/api/v1/records/${recordId}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/records/${recordId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

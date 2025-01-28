@@ -15,7 +15,7 @@
 //           throw new Error('Access token not found');
 //         }
 
-//         const response = await fetch('http://localhost:8082/api/v1/patients/all', {
+//         const response = await fetch('http://localhost:8388/api/v1/patients/all', {
 //           headers: {
 //             Authorization: `Bearer ${accessToken}`,
 //             'Content-Type': 'application/json',

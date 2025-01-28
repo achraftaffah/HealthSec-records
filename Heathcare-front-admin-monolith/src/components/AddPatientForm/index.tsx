@@ -31,7 +31,7 @@ const AddPatientForm = () => {
   const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8082/api/v1/patients/add", {
+      const response = await fetch("http://localhost:8388/api/v1/patients/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

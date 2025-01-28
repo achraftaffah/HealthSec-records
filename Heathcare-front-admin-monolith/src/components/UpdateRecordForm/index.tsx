@@ -26,7 +26,7 @@ const UpdateRecordForm = () => {
 
   const fetchRecordData = async (recordId:any) => {
     try {
-      const response = await fetch(`http://localhost:8082/api/v1/records/getby/${recordId}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/records/getby/${recordId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

@@ -24,7 +24,7 @@ export default function Signup() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8082/api/v1/auth/register",
+        "http://localhost:8388/api/v1/auth/register",
         formData
       );
       console.log("Registration successful", response.data);

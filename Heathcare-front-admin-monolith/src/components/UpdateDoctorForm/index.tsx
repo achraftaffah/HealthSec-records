@@ -29,7 +29,7 @@ const UpdateDoctorForm = () => {
 
   const fetchDoctorData = async (doctorId:any) => {
     try {
-      const response = await fetch(`http://localhost:8082/api/v1/doctors/getby/${doctorId}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/doctors/getby/${doctorId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -65,7 +65,7 @@ const UpdateDoctorForm = () => {
         dateOfBirth: new Date(doctorData.dateOfBirth).toISOString(),
       };
 
-      const response = await fetch(`http://localhost:8082/api/v1/doctors/update/${doctorId}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/doctors/update/${doctorId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

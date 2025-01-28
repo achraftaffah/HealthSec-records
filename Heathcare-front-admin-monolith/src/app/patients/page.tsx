@@ -19,7 +19,7 @@ const PatientTablePage = () => {
     const fetchPatients = async () => {
       const token = cookies.get('accessToken'); // Make sure you have a cookie named 'accessToken'
       try {
-        const response = await fetch(`http://localhost:8082/api/v1/patients/all?page=${currentPage-1}&size=${patientsPerPage}`, {
+        const response = await fetch(`http://localhost:8388/api/v1/patients/all?page=${currentPage-1}&size=${patientsPerPage}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -49,7 +49,7 @@ const PatientTablePage = () => {
   const handleDelete = async (patientId: any) => {
     const token = cookies.get('accessToken');
     try {
-      const response = await fetch(`http://localhost:8082/api/v1/patients/delete/${patientId}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/patients/delete/${patientId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

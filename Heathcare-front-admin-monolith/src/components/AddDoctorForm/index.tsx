@@ -43,7 +43,7 @@ const AddDoctorForm = () => {
 
       console.log("Request Body:", requestBody);
 
-      const response = await fetch("http://localhost:8082/api/v1/doctors/add", {
+      const response = await fetch("http://localhost:8388/api/v1/doctors/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

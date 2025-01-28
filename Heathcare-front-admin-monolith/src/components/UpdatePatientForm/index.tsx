@@ -29,7 +29,7 @@ const UpdatePatientForm = () => {
 
   const fetchPatientData = async (patientId:any) => {
     try {
-      const response = await fetch(`http://localhost:8082/api/v1/patients/getby/${patientId}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/patients/getby/${patientId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -54,7 +54,7 @@ const UpdatePatientForm = () => {
   const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8082/api/v1/patients/update/${patientData.personID}`, {
+      const response = await fetch(`http://localhost:8388/api/v1/patients/update/${patientData.personID}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
