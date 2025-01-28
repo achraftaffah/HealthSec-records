@@ -42,7 +42,7 @@ const FormElementsPage = () => {
   const handleSubmit = async () => {
     console.log(predictionData);
     try {
-      const response = await fetch('http://127.0.0.1:8085/predict', {
+      const response = await fetch('http://localhost:8388/predict', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

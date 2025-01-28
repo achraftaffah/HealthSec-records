@@ -9,7 +9,15 @@ spring:
         - id: r2
           uri: lb://BASICDISEASEPREDICTION-SERVICE
           predicates:
-            Path= /
+            Path= /**
+        - id: r3
+          uri: lb://CANCERPREDICTION-SERVICE
+          predicates:
+            Path= /predict
+        - id: r4
+          uri: lb://DIABETESPREDICTION-SERVICE
+          predicates:
+            Path= /predict
       globalcors:
         corsConfigurations:
           '[/**]':

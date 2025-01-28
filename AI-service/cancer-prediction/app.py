@@ -6,6 +6,8 @@ from pydantic import BaseModel, Field, validator
 import numpy as np
 from data.data import load_dataset, preprocess_data
 from model.model import train_model
+from py_eureka_client import eureka_client
+import uvicorn
 
 # Define the FastAPI app
 app = FastAPI()
@@ -112,5 +114,5 @@ def predict_cancer(request: CancerPredictionRequest):
 
 # If running this script directly, start the FastAPI server
 if __name__ == "__main__":
-    import uvicorn
+    eureka_client.init(eureka_server="http://localhost:8761", app_name="CancerPrediction-service", instance_port=8052)
     uvicorn.run(app, host="127.0.0.1", port=8084)

@@ -9,6 +9,8 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.ensemble import GradientBoostingClassifier
 from imblearn.over_sampling import SMOTE  # Import SMOTE for handling imbalance
 import warnings
+import uvicorn
+from py_eureka_client import eureka_client
 
 # Suppress specific FutureWarnings
 warnings.filterwarnings("ignore", category=FutureWarning, module="sklearn.utils.validation")
@@ -105,5 +107,5 @@ def predict_diabetes(request: DiabetesPredictionRequest):
 
 # If running this script directly, start the FastAPI server
 if __name__ == "__main__":
-    import uvicorn
+    eureka_client.init(eureka_server="http://localhost:8761", app_name="DiabetesPrediction-service", instance_port=8053)
     uvicorn.run(app, host="127.0.0.1", port=8085)
